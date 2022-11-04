@@ -1,0 +1,17 @@
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+}
+
+// @include grid(12, -lg);
+@include grid(12);
+@include m(){
+    @include grid(12, -md);
+}

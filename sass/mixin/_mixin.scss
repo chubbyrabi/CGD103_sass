@@ -1,0 +1,28 @@
+@mixin border($borderColor, $borderRadius) {
+    border: 1px solid $borderColor;
+    border-radius: $borderRadius;
+}
+
+// $w: 1200px;
+@mixin boxcenter($w, $top:0px){
+    width: $w;
+    margin: auto 0;
+    // border-radius: 10px
+    @include border(#333, 10px);
+    height: 100px;
+}
+
+@mixin layout($w) {
+    @if $w == 'full'{
+        width: 100%;
+    }@else{
+        width: $w + px;
+        margin: 0 auto;
+    }
+}
+
+@mixin m(){
+    @media all and (max-width: 720) {
+        @content;
+    }
+}

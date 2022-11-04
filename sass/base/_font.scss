@@ -1,0 +1,51 @@
+/* ----- 文字設定 ----- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/nevermind.min.css");
+
+.h1-style{
+    font-family: 'NeverMind','Noto Sans TC';
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.4em;
+    letter-spacing: 0.05em;
+    color: var(--clr-color);
+}
+.h2-style{
+    font-family: 'NeverMind','Noto Sans TC';
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+    text-align: inherit;
+    color: var(--clr-color);
+}
+.h3-style{
+    font-family: 'NeverMind','Noto Sans TC';
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+    text-align: inherit;
+    color: var(--clr-color);
+}
+.h4-style{
+    font-family: 'NeverMind','Noto Sans TC';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+    text-align: inherit;
+    color: var(--clr-color);
+}
+.p-style{
+    font-family: 'NeverMind','Noto Sans TC';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6em;
+    letter-spacing: 0.05em;
+    text-align: justify;
+    color: var(--clr-color);
+}
+.no-letter-spacing{
+    letter-spacing: 0;
+}
