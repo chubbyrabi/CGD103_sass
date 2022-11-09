@@ -152,7 +152,7 @@ $class: 'top';
     }
 }
 
-.btn{
+.BTN{
     // $outline: true;
     // $outline: false;
     $BTN: blue;
@@ -265,57 +265,72 @@ $class: 'top';
     }
 }
 
-$img:(
-    'key1': value1,
-    'key2': value2
-);
+$img :(
+    'key1' : value1,
+    'key2' : value2); //map
 
-.boxTwo{
-    content: map-get($img, key1);
-}
-$images:img1 img2;
-
-@each $i in $images{
-    .img_#{$i}{
-        background-image: url('images/#{$i}.jpg');
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-    }
+.box {
+  content: map-get($img, key1);
 }
 
-$title:(
-    'h1': 40px,
-    'h2': 30px,
-    'h3': 25px,
-    'span': 16px,
-    '*': 24px
+$images: img1 img2 img3 img4; //list
+
+@each $i in $images {
+
+  .img_#{$i} {
+    background-image: url('images/#{$i}.jpg');
+    // background-attachment: fixed;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // width: 100%;
+  }
+
+}
+
+//  桌機字體標題
+@include title($title_d);
+// 手機字體標題
+@include m(){
+  @include title($title_m);
+}
+
+@include color($colors);
+
+
+
+
+$btn:(
+    // "primary": rgb(255,0,0),
+    "primary": rgb(30, 8, 121),
+    // "primary": #000000,
+    "secondary":  #f20,
+    "success": #eee,
 );
 
-@mixin title($title, $color) {
-    @each $k, $v in $title{
-        #{$k}{
-            font-size: $v;
-            color:$color;
+@mixin btn_module($btn,$r) {
+    @each $k, $v in $btn{
+        .btn-#{$k}{
+            max-width: 300px;
+            padding: 10px 20px;
+            background-color: $v;
+            text-align: center;
+            border-radius: $r;
+            cursor: pointer;
+
+            @if $v == #000000 and $v == 'black'{
+                color: invert($v);
+            }@else{
+                color: #000;
+            }
+
+            // color:invert($v);
+            // 反轉顏色
+            transition: all ease 0.3s;
+            &:hover{
+                background-color: darken($v, 20);
+            }
         }
     }
 }
-@include title($title,#333);
 
-
-$color:(
-    'primary':#ff7300,
-    'secondary':#0ed7ff,
-    'success':#00fc00,
-    'info':#e4e4e4,
-);
-
-@each $k, $v in $color{
-    .text-#{$k}{
-        color: $v;
-    }
-    .bg-#{$k}{
-        background-color: $v;
-    }
-}
+@include btn_module($btn, 5px);

@@ -108,3 +108,24 @@
 .hvr-pointer{
     cursor: pointer;
 }
+
+// 顏色
+
+
+// "primary":    $primary,
+// "secondary":  $secondary,
+// "success":    $success,
+// "info":       $info,
+// "warning":    $warning,
+// "danger":     $danger,
+// "light":      $light,
+// "dark":       $dark
+
+
+$colors : (
+  "primary": #ff7300,
+  "secondary" : #0ed7ff,
+  "success": #00fc00,
+  "info" : #e4e4e4,
+  "warning" : #f20
+);

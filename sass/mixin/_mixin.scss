@@ -26,3 +26,56 @@
         @content;
     }
 }
+
+@mixin grid($num , $s: null) {
+    @for $i from 1 through $num {
+        .col#{$s}-#{$i} {
+            width: ($i / $num) * 100%;
+        }
+    }
+}
+
+// 標題
+@mixin title($title , $color: null) {
+
+    @each $k ,
+    $v in $title {
+        #{$k} {
+            font-size: $v;
+            color: $color;
+        }
+    }
+}
+
+// color 
+@mixin color($colors) {
+
+    @each $k ,
+    $v in $colors {
+        .text-#{$k} {
+            color: $v;
+        }
+
+        .bg-#{$k} {
+            background-color: $v;
+        }
+
+        .border-#{$k} {
+            border: $v;
+        }
+    }
+}
+
+// btn
+$btn : (
+
+);
+
+@each $k ,$v in $btn {
+    .btn-#{$k} {
+        max-width: 300px;
+        padding: 10px 20px;
+        background-color: $v;
+        text-align: center;
+    }
+}

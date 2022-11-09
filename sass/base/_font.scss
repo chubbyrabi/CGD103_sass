@@ -49,3 +49,18 @@
 .no-letter-spacing{
     letter-spacing: 0;
 }
+
+// 字體大小
+//  桌機
+$title_d : ('h1' : 40px,
+  'h2' : 30px,
+  'h3' : 25px,
+  'span' : 16px,
+  '*' : 14px); //map
+
+//手機
+  $title_m : ('h1' : 100px,
+  'h2' : 40px,
+  'h3' : 35px,
+  'span' : 14px,
+  '*' : 13px); //map
